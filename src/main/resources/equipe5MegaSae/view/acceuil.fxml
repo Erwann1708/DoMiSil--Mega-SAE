@@ -42,10 +42,13 @@
                   <Insets right="100.0" top="10.0" />
                </HBox.margin>
             </HBox>
-            <TextArea maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.75" prefHeight="32.0" prefWidth="275.0" style="-fx-background-radius: 8;">
+            <TextArea editable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.75" prefHeight="38.0" prefWidth="275.0" style="-fx-background-radius: 8;" text="🔎                                                  +">
                <HBox.margin>
                   <Insets top="6.0" />
                </HBox.margin>
+               <font>
+                  <Font size="16.0" />
+               </font>
             </TextArea>
             <Button mnemonicParsing="false" style="-fx-background-color: #ec221f; -fx-background-radius: 8;" text="Quitter" textFill="WHITE">
                <HBox.margin>
@@ -64,33 +67,46 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <TextField editable="false" text="Créer un Festival" AnchorPane.topAnchor="1.0" />
-                              <TextField editable="false" text="Les Ardentes" AnchorPane.topAnchor="32.0" />
+                              <TextField editable="false" text="Créer un Festival" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="1.0">
+                                 <padding>
+                                    <Insets bottom="8.0" right="284.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="Tahoma" size="12.0" />
+                                 </font>
+                              </TextField>
+                              <TextField editable="false" text="Les Ardentes" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="32.0">
+                                 <padding>
+                                    <Insets bottom="8.0" right="280.0" />
+                                 </padding>
+                              </TextField>
+                              <Button mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="Créer" textFill="WHITE" AnchorPane.leftAnchor="330.0" AnchorPane.topAnchor="0.0" />
+                              <Button mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="Modifier" textFill="WHITE" AnchorPane.leftAnchor="330.0" AnchorPane.topAnchor="30.0" />
                            </children>
                         </AnchorPane>
                   </content>
                 </TitledPane>
-                <TitledPane animated="false" text="Artiste">
+                <TitledPane animated="false" opacity="0.4" text="Artiste">
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #D9D9D9;" />
                   </content>
                 </TitledPane>
-                <TitledPane animated="false" text="Logistique">
+                <TitledPane animated="false" opacity="0.4" text="Logistique">
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #D9D9D9;" />
                   </content>
                 </TitledPane>
-                  <TitledPane animated="false" text="Planning">
+                  <TitledPane animated="false" opacity="0.4" text="Planning">
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #D9D9D9;" />
                      </content>
                   </TitledPane>
-                  <TitledPane animated="false" text="Billeterie">
+                  <TitledPane animated="false" opacity="0.4" text="Billeterie">
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #D9D9D9;" />
                      </content>
                   </TitledPane>
-                  <TitledPane animated="false" text="Documents">
+                  <TitledPane animated="false" opacity="0.4" text="Documents">
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #D9D9D9;" />
                      </content>
@@ -100,22 +116,40 @@
                   <Insets left="20.0" />
                </padding>
             </Accordion>
-            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="40.0">
+            <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="45.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue sur DoMISi'l !">
                      <font>
-                        <Font name="System Bold" size="16.0" />
+                        <Font name="Tahoma Bold" size="18.0" />
                      </font>
                   </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pour créer votre Festival, appuyez simplement sur                    et remplissez les cases suivant les instructions." />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pour créer votre Festival, appuyez simplement sur                    et remplissez les cases suivant les instructions.">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Text>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Attribuez ensuite un Lieu à votre festival.">
                      <VBox.margin>
                         <Insets top="-20.0" />
                      </VBox.margin>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
                   </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Si vous avez fait une erreur, appuyer simplement sur                        juste en dessous." />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Vous  pouvez désormais gérer votre propre festival comme a domicile. " />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Si vous avez fait une erreur, appuyer simplement sur                        juste en dessous.">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Vous  pouvez désormais gérer votre propre festival comme a domicile. ">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Text>
                </children>
+               <padding>
+                  <Insets left="125.0" />
+               </padding>
             </VBox>
         </items>
       </SplitPane>
