@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="346.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equipe5MegaSae.view.ChoisirLieu">
+<AnchorPane prefHeight="400.0" prefWidth="346.0" xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="equipe5MegaSae.view.ModifierLieu">
    <children>
-      <Label layoutX="10.0" layoutY="5.0" style="-fx-font-weight: bold;" text="Choisir votre lieu" />
+      <Label layoutX="10.0" layoutY="5.0" style="-fx-font-weight: bold;" text="Modifier votre lieu" />
       <VBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="360.0" prefWidth="342.0" spacing="15">
          <children>
             <Label text="Nom du Lieu" />
@@ -28,7 +33,7 @@
                <Label text="m2" />
             </HBox>
             <HBox alignment="CENTER_LEFT" spacing="10">
-               <Button prefWidth="245" style="-fx-background-color: black; -fx-text-fill: white;" text="Choisir ce Lieu" />
+               <Button prefWidth="245" style="-fx-background-color: black; -fx-text-fill: white;" text="Modifier ce Lieu" />
                <Button maxWidth="100" style="-fx-background-color: red; -fx-text-fill: white;" text="Quitter" />
             </HBox>
          </children>
