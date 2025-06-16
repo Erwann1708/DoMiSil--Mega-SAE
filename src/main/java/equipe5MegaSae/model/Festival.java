@@ -14,23 +14,23 @@ public class Festival {
     private Planning planning;
     private Lieu lieu;
     private List<Document> documents;
+    private Logistique logistique;
 
     public Festival(){
         this.artistes = new ArrayList<>();
         this.planning = new Planning();
         this.documents = new ArrayList<>();
+        this.logistique = new Logistique(0,0,"","", "En attente");
 
     }
 
     public Festival(String nom, double budget, LocalDate dateDebut, LocalDate dateFin,Lieu lieu) {
+        this(); // Appel du constructeur par défaut pour initialiser les listes
         setNom(nom);
         setBudget(budget);
         setDateDebut(dateDebut);
         setDateFin(dateFin);
         setLieu(lieu);
-        this.artistes = new ArrayList<>();
-        this.planning = new Planning();
-        this.documents = new ArrayList<>();
     }
 
     // Getters
@@ -61,6 +61,10 @@ public class Festival {
 
     public List<Document> getDocuments() {
         return documents;
+    }
+
+    public Logistique getLogistique() {
+        return logistique;
     }
 
     //Setters
