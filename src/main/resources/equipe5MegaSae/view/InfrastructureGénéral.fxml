@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="328.0" prefWidth="306.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equipe5MegaSae.view.InfrastructureGénéral">
+   <children>
+      <Label layoutX="10.0" layoutY="5.0" style="-fx-font-size: 12px; -fx-font-weight: bold;" text="Infrastructure Général" />
+      <VBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="40.0" spacing="20">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="10">
+               <Label text="Scene" />
+               <Region prefWidth="80" />
+               <CheckBox />
+               <Label text="Oui" />
+               <TextField maxWidth="80" promptText="Quantite" />
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="10">
+               <Label text="Stands" />
+               <Region prefWidth="76" />
+               <CheckBox />
+               <Label text="Oui" />
+               <TextField maxWidth="80" promptText="Quantite" />
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="10">
+               <Label text="Cloture" />
+               <Region prefWidth="73" />
+               <CheckBox />
+               <Label text="Oui" />
+               <TextField maxWidth="80" promptText="Quantite" />
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="10">
+               <Label text="Materiel son et lumiere" />
+               <CheckBox />
+               <Label text="Oui" />
+               <TextField maxWidth="80" promptText="Quantite" />
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="10">
+               <Label text="Sanitaires" />
+               <Region prefWidth="60" />
+               <CheckBox />
+               <Label text="Oui" />
+               <TextField maxWidth="80" promptText="Quantite" />
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="10">
+               <Button prefWidth="200" style="-fx-background-color: black; -fx-text-fill: white;" text="Enregistrer" />
+               <Button maxWidth="100" style="-fx-background-color: red; -fx-text-fill: white;" text="Quitter" />
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
