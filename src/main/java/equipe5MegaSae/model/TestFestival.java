@@ -2,6 +2,7 @@ package equipe5MegaSae.model;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class TestFestival {
 
@@ -31,14 +32,14 @@ public class TestFestival {
         }
 
         //Création d'un planning
-        Planning planning = new Planning(LocalDateTime.of(2023, 6, 2, 20, 0),LocalDateTime.of(2023, 6, 4, 1, 0));
+        Planning planning = new Planning(LocalDateTime.of(2023, 6, 1, 0, 0),LocalDateTime.of(2023, 6, 6, 1, 0));
         // Affectation du planning au festival
         festival.setPlanning(planning);
 
         // Création des événements
         Evenement concertZola = new Evenement("Concert de Zola",
                 LocalDateTime.of(2023, 6, 2, 21, 0),
-                LocalDateTime.of(2023, 6, 2, 22, 0),
+                LocalDateTime.of(2023, 6, 3, 22, 0),
                 TypeEvenement.Artistique, "Grande Scène",
                 "Concert du rappeur Zola");
 
@@ -46,11 +47,11 @@ public class TestFestival {
                 LocalDateTime.of(2023, 6, 2, 22, 0),
                 LocalDateTime.of(2023, 6, 2, 23, 0),
                 TypeEvenement.Artistique, "Grande Scène",
-                "Concert de clôture de Lomepal");
+                "Concert de Lomepal");
 
         Evenement demontage = new Evenement("Démontage du matériel",
-                LocalDateTime.of(2023, 6, 3, 23, 30),
-                LocalDateTime.of(2023, 6, 4, 1, 0),
+                LocalDateTime.of(2023, 6, 3, 20, 0),
+                LocalDateTime.of(2023, 6, 4, 23, 0),
                 TypeEvenement.Logistique, null,
                 "Démontage des équipements après le festival");
 
@@ -58,35 +59,62 @@ public class TestFestival {
         concertZola.setArtiste(a1); // Zola joue dans son concert
         concertLomepal.setArtiste(a2); // Lomepal joue dans son concert
 
-        // Vérification des artistes associés aux événements
-        System.out.println("\n====== Artistes par événement artistique ======");
-        for (Evenement e : planning.getEvenements()) {
-            if (e.estArtistique()) {
-                System.out.println(e.getNom() + " -> " + e.getArtiste().getNom());
-            } else {
-                System.out.println(e.getNom() + " -> (Événement non artistique)");
-            }
-        }
-
-
         // Ajout des événements au planning
         planning.ajouterEvenement(concertZola);
         planning.ajouterEvenement(concertLomepal);
         planning.ajouterEvenement(demontage);
 
-        /*
 
-        // Affichage du planning du festival
-        System.out.println("\n======" + "Planning du festival:" + "======");
-        System.out.println("Heure de début: " + festival.getPlanning().getHeureDebut());
-        System.out.println("Heure de fin: " + festival.getPlanning().getHeureFin());
-        System.out.println("Scène: " + festival.getPlanning().getScene());
-        System.out.println("Artistes programmés:");
-        for (Artiste artiste : festival.getPlanning().getArtistes()) {
-            System.out.println("- " + artiste.getNom() + (""));
-        }*/
+        // Vérification des artistes associés aux événements
+        System.out.println("\n====== événement artistique ======");
+        //DateTimeFormatter pour formater les dates
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
+        // Affichage des événements du planning
+        for (Evenement e : planning.getEvenements()) {
+            String debut = e.getHeureDebut().format(formatter);
+            String fin = e.getHeureFin().format(formatter);
 
+            if (e.estArtistique() && e.getArtiste() != null) {
+                System.out.println(e.getNom() + " [" + debut + " - " + fin + "] -> " + e.getArtiste().getNom());
+            } else {
+                System.out.println(e.getNom() + " [" + debut + " - " + fin + "] -> (Événement non artistique)");
+            }
+        }
 
+        // Affichage du planning complet
+        System.out.println("\n====== PLANNING COMPLET ======");
+        for (Evenement e : planning.getEvenements()) {
+            String nom = e.getNom();
+            String debut = e.getHeureDebut().format(formatter);
+            String fin = e.getHeureFin().format(formatter);
+            String type = e.getType().toString();
+
+            String artiste;
+            if (e.getArtiste() != null) {
+                artiste = e.getArtiste().getNom();
+            } else {
+                artiste = "(aucun)";
+            }
+
+            String scene;
+            if (e.getScene() != null) {
+                scene = e.getScene();
+            } else {
+                scene = "(non précisé)";
+            }
+
+            String description;
+            if (e.getDescription() != null) {
+                description = e.getDescription();
+            } else {
+                description = "(aucune description)";
+            }
+
+            System.out.println("- " + nom);
+            System.out.println("  • Type       : " + type);
+            System.out.println("  • Horaire    : " + debut + " → " + fin);
+
+        }
     }
 }

@@ -10,6 +10,7 @@ public class Planning {
     private LocalDateTime heureFin;
     private String description;
     private List<Evenement> evenements;
+    private Festival festival;
 
     public Planning(){
         this.evenements = new ArrayList<>();
@@ -63,12 +64,15 @@ public class Planning {
         this.description = description;
     }
 
+    public void setFestival(Festival festival) {
+        this.festival = festival;
+    }
+
     public boolean ajouterEvenement(Evenement evenement) {
         if (evenement == null) return false;
 
         LocalDateTime debut = evenement.getHeureDebut();
         LocalDateTime fin = evenement.getHeureFin();
-
 
         if (debut == null || fin == null) {
             throw new IllegalArgumentException("L'événement doit avoir une heure de début et de fin non nulles.");
@@ -78,16 +82,29 @@ public class Planning {
             throw new IllegalArgumentException("Les horaires de l'événement doivent être compris dans ceux du planning.");
         }
 
+        // Vérification : artiste doit jouer pendant le festival
+        if (evenement.estArtistique() && evenement.getArtiste() != null && festival != null) {
+            LocalDateTime debutFestival = festival.getDateDebut().atStartOfDay();
+            LocalDateTime finFestival = festival.getDateFin().atTime(23, 59);
+
+            if (debut.isBefore(debutFestival) || fin.isAfter(finFestival)) {
+                throw new IllegalArgumentException("L'artiste " + evenement.getArtiste().getNom() +
+                        " joue en dehors des dates du festival [" + debutFestival + " → " + finFestival + "].");
+            }
+        }
+
         if (!evenements.contains(evenement)) {
             evenements.add(evenement);
             return true;
         }
-        return false; // déjà présent
+
+        return false;
     }
 
     public boolean supprimerEvenement(Evenement evenement) {
         return evenements.remove(evenement);
     }
+
 
     //A Faire
     /*
