@@ -12,20 +12,25 @@ public class Festival {
     private LocalDate dateFin;
     private List<Artiste> artistes;
     private Planning planning;
+    private Lieu lieu;
+    private List<Document> documents;
 
     public Festival(){
         this.artistes = new ArrayList<>();
         this.planning = new Planning();
+        this.documents = new ArrayList<>();
 
     }
 
-    public Festival(String nom, double budget, LocalDate dateDebut, LocalDate dateFin) {
+    public Festival(String nom, double budget, LocalDate dateDebut, LocalDate dateFin,Lieu lieu) {
         setNom(nom);
         setBudget(budget);
         setDateDebut(dateDebut);
         setDateFin(dateFin);
+        setLieu(lieu);
         this.artistes = new ArrayList<>();
         this.planning = new Planning();
+        this.documents = new ArrayList<>();
     }
 
     // Getters
@@ -48,6 +53,14 @@ public class Festival {
 
     public List<Artiste> getArtistes() {
         return artistes;
+    }
+
+    public Lieu getLieu() {
+        return lieu;
+    }
+
+    public List<Document> getDocuments() {
+        return documents;
     }
 
     //Setters
@@ -83,6 +96,13 @@ public class Festival {
             throw new IllegalArgumentException("La date de fin doit être après ou égale à la date de début.");
         }
         this.dateFin = dateFin;
+    }
+
+    public void setLieu(Lieu lieu) {
+        if (lieu == null) {
+            throw new IllegalArgumentException("Le lieu du festival ne peut pas être nul.");
+        }
+        this.lieu = lieu;
     }
 
     public void setPlanning(Planning planning) {
@@ -125,6 +145,26 @@ public class Festival {
 
     public void supprimerArtiste(Artiste artiste) {
         artistes.remove(artiste);
+    }
+
+    public void ajouterDocument(Document document) {
+        if (document == null) {
+            throw new IllegalArgumentException("Le document ne peut pas être nul.");
+        }
+
+        if (document.getFestival() != this) {
+            throw new IllegalArgumentException("Le document n'est pas lié à ce festival.");
+        }
+
+        if (documents.contains(document)) {
+            throw new IllegalArgumentException("Ce document est déjà associé à ce festival.");
+        }
+
+        documents.add(document);
+    }
+
+    public boolean supprimerDocument(Document d) {
+        return documents.remove(d);
     }
 
 
