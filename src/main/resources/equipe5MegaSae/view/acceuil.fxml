@@ -51,7 +51,7 @@
                   <Button mnemonicParsing="false" style="-fx-background-color: white; -fx-background-radius: 15;" text="Enregistrer " />
                   <Button mnemonicParsing="false" style="-fx-background-color: black; -fx-background-radius: 15;" text="Ouvrir" textFill="WHITE" />
                   <Button mnemonicParsing="false" style="-fx-background-color: white; -fx-background-radius: 15;" text="Nouveau Projet" />
-                  <Button mnemonicParsing="false" style="-fx-background-color: black; -fx-background-radius: 15;" text="Label" textFill="WHITE" />
+                  <Button mnemonicParsing="false" style="-fx-background-color: black; -fx-background-radius: 15;" text="Affic" textFill="WHITE" />
                </children>
                <opaqueInsets>
                   <Insets />
@@ -77,7 +77,7 @@
          <VBox.margin>
             <Insets left="20.0" right="10.0" />
          </VBox.margin></HBox>
-      <SplitPane centerShape="false" dividerPositions="0.29797979797979796" prefHeight="160.0" prefWidth="200.0" style="-fx-background-color: #D9D9D9;">
+      <SplitPane fx:id="splitPane" centerShape="false" dividerPositions="0.29797979797979796" prefHeight="160.0" prefWidth="200.0" style="-fx-background-color: #D9D9D9; -fx-skin: 'com.sun.javafx.scene.control.skin.SplitPaneSkin'; -fx-divider-size: 0;">
         <items>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
@@ -85,9 +85,9 @@
                     <panes>
                       <TitledPane alignment="TOP_LEFT" animated="false" contentDisplay="CENTER" maxHeight="-Infinity" minHeight="-Infinity" style="-fx-animated: true; -fx-background-color: #D9D9D9;" text="Mon Festival                     Creer votre festival comme vous le voulez" textOverrun="CLIP">
                         <content>
-                          <AnchorPane maxHeight="-Infinity" minHeight="200.0" minWidth="0.0" prefHeight="200.0" prefWidth="545.0" style="-fx-background-color: #D9D9D9;">
+                          <AnchorPane maxHeight="-Infinity" minHeight="200.0" minWidth="0.0" prefHeight="254.0" prefWidth="545.0" style="-fx-background-color: #D9D9D9;">
                                  <children>
-                                    <TextField editable="false" layoutX="20.0" layoutY="20.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="414.0" text="   Créer un Festival" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="55.0">
+                                    <TextField editable="false" layoutX="20.0" layoutY="20.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="414.0" style="-fx-background-radius: 8;" text="   Créer un Festival" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="55.0">
                                        <padding>
                                           <Insets bottom="2.0" right="284.0" />
                                        </padding>
@@ -95,7 +95,7 @@
                                           <Font name="Tahoma" size="12.0" />
                                        </font>
                                     </TextField>
-                                    <TextField editable="false" layoutX="20.0" layoutY="52.0" prefHeight="40.0" prefWidth="415.0" text="   Les Ardentes" visible="false" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="100.0">
+                                    <TextField editable="false" layoutX="20.0" layoutY="52.0" prefHeight="40.0" prefWidth="415.0" style="-fx-background-radius: 8;" text="   MonFestivalExemple" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="100.0">
                                        <padding>
                                           <Insets bottom="2.0" right="280.0" />
                                        </padding>
@@ -104,16 +104,13 @@
                                        </opaqueInsets>
                                     </TextField>
                                     <Button mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="Créer" textFill="WHITE" AnchorPane.leftAnchor="343.0" AnchorPane.topAnchor="62.0" />
-                                    <Button mnemonicParsing="false" opacity="0.0" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="Modifier" textFill="WHITE" AnchorPane.leftAnchor="343.0" AnchorPane.topAnchor="106.0" />
+                                    <Button mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="Modifier" textFill="WHITE" AnchorPane.leftAnchor="343.0" AnchorPane.topAnchor="106.0" />
                                  </children>
                                  <padding>
                                     <Insets bottom="400.0" />
                                  </padding>
                               </AnchorPane>
                         </content>
-                           <padding>
-                              <Insets bottom="50.0" />
-                           </padding>
                       </TitledPane>
                       <TitledPane animated="false" expanded="false" opacity="0.4" text="Artiste">
                         <content>
@@ -157,16 +154,25 @@
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue sur DoMISi'l !">
                      <font>
-                        <Font name="Tahoma Bold" size="18.0" />
+                        <Font name="Tahoma Bold" size="20.0" />
                      </font>
+                     <VBox.margin>
+                        <Insets bottom="75.0" />
+                     </VBox.margin>
                   </Text>
                   <HBox prefHeight="24.0" prefWidth="666.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pour créer votre Festival, appuyez simplement sur                    et remplissez les cases suivant les instructions.">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pour créer votre Festival, appuyez simplement sur">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </Text>
+                        <Button mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="Créer" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" et remplissez les cases suivant les instructions." />
                      </children>
                   </HBox>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Attribuez ensuite un Lieu à votre festival.">
@@ -179,11 +185,17 @@
                   </Text>
                   <HBox prefHeight="22.0" prefWidth="666.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Si vous avez fait une erreur, appuyer simplement sur                        juste en dessous.">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Si vous avez fait une erreur, appuyer simplement sur ">
                            <font>
                               <Font size="13.0" />
                            </font>
                         </Text>
+                        <Button mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="Modifier" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" juste en dessous." />
                      </children>
                   </HBox>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Vous  pouvez désormais gérer votre propre festival comme a domicile. ">
