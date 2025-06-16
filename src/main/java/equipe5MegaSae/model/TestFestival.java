@@ -1,21 +1,27 @@
 package equipe5MegaSae.model;
 
+import java.io.File;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 public class TestFestival {
 
     public static void main(String[] args) {
 
+        //Création d’un lieu
+        Lieu lieu = new Lieu("Parc des Expos", "Lyon", "69000", "10 rue de la scène", 5000);
+
         // Création d'un festival
-        Festival festival = new Festival("Festival de Musique", 50000, LocalDate.of(2023, 6, 1), LocalDate.of(2023, 6, 3));
+        Festival festival = new Festival("Festival de Musique", 50000, LocalDate.of(2023, 6, 1), LocalDate.of(2023, 6, 3), lieu);
 
         // Affichage des détails du festival
         System.out.println("Nom du festival: " + festival.getNom());
         System.out.println("Budget: " + festival.getBudget());
         System.out.println("Date de début: " + festival.getDateDebut());
         System.out.println("Date de fin: " + festival.getDateFin());
+        System.out.println("Lieu: " + festival.getLieu());
 
         //Creations des artistes
         Artiste a1 = new Artiste("Zola", "zola@gmail.com", "0601020304");
@@ -116,5 +122,8 @@ public class TestFestival {
             System.out.println("  • Horaire    : " + debut + " → " + fin);
 
         }
+
     }
+
+
 }

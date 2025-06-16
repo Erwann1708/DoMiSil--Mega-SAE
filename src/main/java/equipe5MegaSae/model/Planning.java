@@ -106,7 +106,7 @@ public class Planning {
     }
 
 
-    //A Faire
+    //A Faires
     /*
 
     -tout tester
