@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="equipe5MegaSae.view.ChoisirLieu"
+            prefHeight="400.0" prefWidth="600.0">
+   <children>
+      <Label text="Choisir votre lieu" layoutX="10.0" layoutY="5.0" style="-fx-font-weight: bold;" />
+      <VBox layoutX="10.0" layoutY="10.0" prefHeight="360.0" prefWidth="560.0" spacing="15" alignment="CENTER_LEFT">
+         <children>
+            <Label text="Nom du Lieu" />
+            <TextField promptText="String Value" maxWidth="310" />
+            <HBox spacing="10">
+               <VBox>
+                  <Label text="Ville" />
+                  <TextField promptText="String Value" />
+               </VBox>
+               <VBox>
+                  <Label text="Code Postal" />
+                  <TextField promptText="Numeric Value" />
+               </VBox>
+            </HBox>
+            <Label text="Adresse" />
+            <TextField promptText="String Value" maxWidth="310" />
+            <Label text="Superficie" />
+            <HBox spacing="10">
+               <TextField promptText="String Value" />
+               <Label text="m2" />
+            </HBox>
+            <Button text="Choisir ce Lieu" style="-fx-background-color: black; -fx-text-fill: white;" maxWidth="310" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
