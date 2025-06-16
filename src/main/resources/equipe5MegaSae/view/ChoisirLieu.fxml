@@ -33,7 +33,10 @@
                <TextField promptText="String Value" />
                <Label text="m2" />
             </HBox>
-            <Button text="Choisir ce Lieu" style="-fx-background-color: black; -fx-text-fill: white;" maxWidth="310" />
+            <HBox spacing="10" alignment="CENTER_LEFT">
+               <Button text="Choisir ce Lieu" style="-fx-background-color: black; -fx-text-fill: white;" prefWidth="245" />
+               <Button text="Quitter" style="-fx-background-color: red; -fx-text-fill: white;" maxWidth="100" />
+            </HBox>
          </children>
       </VBox>
    </children>
