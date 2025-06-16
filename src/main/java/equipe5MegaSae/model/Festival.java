@@ -91,6 +91,7 @@ public class Festival {
         }
 
         this.planning = planning;
+        planning.setFestival(this);
 
         // Ajouter un évenement par défaut au planning : "Début du festival"
         Evenement debut = new Evenement(
