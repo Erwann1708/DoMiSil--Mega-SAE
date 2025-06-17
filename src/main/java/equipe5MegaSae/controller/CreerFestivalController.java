@@ -31,9 +31,13 @@ public class CreerFestivalController {
         stage.close();
     }
 
+    /*
+    @FXML
     public void initialize() {
         Festival festival = new Festival();
         festival.setNom(nomFestival.getText());
         festival.setBudget(Double.parseDouble(BudgetFestival.getText()));
     }
+
+     */
 }
