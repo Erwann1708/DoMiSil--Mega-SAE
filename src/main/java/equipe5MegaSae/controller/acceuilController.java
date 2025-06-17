@@ -74,4 +74,12 @@ public class acceuilController {
             throw new RuntimeException(e);
         }
     }
+
+
+
+    @FXML
+    private void handleLogistique(ActionEvent event) {
+        // Logique pour gérer la section logistique
+        System.out.println("Logistique section clicked");
+    }
 }
