@@ -146,6 +146,43 @@ public class TestFestival {
 
         }
 
+        // === Tests Billets & StatistiqueVente ===
+        System.out.println("\n=== Tests Billets & StatistiqueVente ===");
+
+// Création et ajout de deux billets
+        Billet billet1 = new Billet(20.0, new Date(), festival);
+        festival.ajouterBillet(billet1);
+
+        Billet billet2 = new Billet(35.0, new Date(), festival);
+        festival.ajouterBillet(billet2);
+
+// Affichage de tous les billets vendus
+        System.out.println("Billets vendus :");
+        for (Billet b : festival.getBillets()) {
+            System.out.println("  " + b);
+        }
+
+// Récupération et affichage des statistiques
+        StatistiqueVente stats = festival.getStatistiqueVente();
+        System.out.println("Nombre de billets vendus : " + stats.getNbBilletsVendus());
+        System.out.println("Revenu total : "            + stats.getRevenuTotal());
+
+// Test de suppression et mise à jour des stats
+        System.out.println("\nSuppression du 1er billet et recalcul :");
+        festival.supprimerBillet(billet1);
+
+        System.out.println("Billets restants :");
+        for (Billet b : festival.getBillets()) {
+            System.out.println("  " + b);
+        }
+
+        stats = festival.getStatistiqueVente();
+        System.out.println("Nombre de billets vendus : " + stats.getNbBilletsVendus());
+        System.out.println("Revenu total : "            + stats.getRevenuTotal());
+
+
+
+
     }
 
 

@@ -3,6 +3,7 @@ package equipe5MegaSae.model;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Festival {
 
@@ -15,13 +16,16 @@ public class Festival {
     private Lieu lieu;
     private List<Document> documents;
     private Logistique logistique;
+    private List<Billet> billets;
+    private final StatistiqueVente statistiqueVente;
 
     public Festival(){
         this.artistes = new ArrayList<>();
         this.planning = new Planning();
         this.documents = new ArrayList<>();
         this.logistique = new Logistique(0,0,"","", "En attente");
-
+        this.billets = new ArrayList<>();
+        this.statistiqueVente = new StatistiqueVente(this);
     }
 
     public Festival(String nom, double budget, LocalDate dateDebut, LocalDate dateFin,Lieu lieu) {
@@ -65,6 +69,14 @@ public class Festival {
 
     public Logistique getLogistique() {
         return logistique;
+    }
+
+    public List<Billet> getBillets() {
+        return billets;
+    }
+
+    public StatistiqueVente getStatistiqueVente() {
+        return statistiqueVente;
     }
 
     //Setters
@@ -169,6 +181,23 @@ public class Festival {
 
     public boolean supprimerDocument(Document d) {
         return documents.remove(d);
+    }
+
+    public void ajouterBillet(Billet billet) {
+        Objects.requireNonNull(billet, "Billet non null");
+        billet.setFestival(this);
+        billets.add(billet);
+        statistiqueVente.ajouterBillet(billet);
+    }
+
+    public void supprimerBillet(Billet billet) {
+        Objects.requireNonNull(billet, "Billet non null");
+        boolean removed = billets.remove(billet);
+        if (!removed) {
+            throw new IllegalArgumentException("Ce billet n'existe pas dans le festival");
+        }
+        // mets à jour la stat en enlevant ce billet
+        statistiqueVente.retireBillet(billet);
     }
 
 

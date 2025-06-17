@@ -9,7 +9,7 @@ public class Billet {
     private Festival festival;
 
 
-    public Billet(double prix, Date dateAchat) {
+    public Billet(double prix, Date dateAchat, Festival festival) {
         setPrix(prix);
         setDateAchat(dateAchat);
         setFestival(festival);
