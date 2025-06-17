@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<AnchorPane prefHeight="324.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equipe5MegaSae.view.SuivisLivraison">
+   <children>
+      <VBox alignment="CENTER" layoutX="150.0" layoutY="50.0" prefHeight="308.0" prefWidth="300.0" spacing="20">
+         <children>
+            <Label style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Suivis livraison materiel" />
+            <VBox alignment="CENTER" spacing="20">
+               <HBox alignment="CENTER" spacing="20">
+                  <Circle fill="#3f8f3f" radius="10" />
+                  <Label style="-fx-font-weight: bold;" text="Expédié" />
+               </HBox>
+               <HBox alignment="CENTER" spacing="20">
+                  <Circle fill="#bfbfbf" radius="10" />
+                  <Label style="-fx-font-weight: bold;" text="En transit" />
+               </HBox>
+               <HBox alignment="CENTER" spacing="20">
+                  <Circle fill="#bfbfbf" radius="10" />
+                  <Label style="-fx-font-weight: bold;" text="En livraison" />
+               </HBox>
+               <HBox alignment="CENTER" spacing="20">
+                  <Circle fill="#ff4d4d" radius="10" />
+                  <Label style="-fx-font-weight: bold;" text="Livré" />
+               </HBox>
+            </VBox>
+            <Button prefWidth="100" style="-fx-background-color: red; -fx-text-fill: white;" text="Fermer" />
+            <Rectangle arcHeight="20" arcWidth="20" fill="#f0f0f0" height="12.0" width="300" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

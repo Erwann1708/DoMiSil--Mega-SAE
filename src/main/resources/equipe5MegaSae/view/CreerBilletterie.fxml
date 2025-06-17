@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equipe5MegaSae.view.CreerBilletterie">
+    <Label layoutX="10" layoutY="10" style="-fx-font-size: 12px; -fx-font-weight: bold;" text="Création de la Billetterie" />
+    <VBox alignment="CENTER" prefHeight="350.0" prefWidth="383.0" spacing="10" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="217.0" AnchorPane.topAnchor="30.0">
+        <TextField promptText="Nombre de place" />
+        <TextField promptText="Prix des billets" />
+        <HBox spacing="10">
+            <Button style="-fx-background-color: purple; -fx-text-fill: white; -fx-pref-width: 150px; -fx-pref-height: 25px;" text="Ajouter" />
+            <Button style="-fx-background-color: red; -fx-text-fill: white; -fx-pref-width: 150px; -fx-pref-height: 25px;" text="Quitter" />
+        </HBox>
+    </VBox>
+</AnchorPane>

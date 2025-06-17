@@ -43,7 +43,7 @@
                <TextField maxWidth="80" promptText="Quantite" />
             </HBox>
             <HBox alignment="CENTER_LEFT" spacing="10">
-               <Button prefWidth="200" style="-fx-background-color: black; -fx-text-fill: white;" text="Enregistrer" />
+               <Button prefWidth="200" style="-fx-background-color: black; -fx-text-fill: white;" text="Commander" />
                <Button maxWidth="100" style="-fx-background-color: red; -fx-text-fill: white;" text="Quitter" />
             </HBox>
          </children>

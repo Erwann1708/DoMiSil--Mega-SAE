@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="268.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equipe5MegaSae.view.RessourceHumaine">
+   <children>
+      <Label layoutX="10.0" layoutY="10.0" style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Ressource Humaine" />
+      <VBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="50.0" prefHeight="326.0" prefWidth="237.0" spacing="10">
+         <children>
+            <Label text="Nombre de bénévole" />
+            <TextField promptText="Value" />
+            <Label text="Entreprise de sécurité" />
+            <TextField promptText="Value" />
+            <Label text="Nombre de musiciens" />
+            <TextField promptText="Value" />
+            <Label text="Fornisseur et prestataire" />
+            <TextArea prefRowCount="3" promptText="Value" />
+            <HBox spacing="10">
+               <Button style="-fx-background-color: black; -fx-text-fill: white;" text="Enregistrer" />
+               <Button style="-fx-background-color: red; -fx-text-fill: white;" text="Quitter" />
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
