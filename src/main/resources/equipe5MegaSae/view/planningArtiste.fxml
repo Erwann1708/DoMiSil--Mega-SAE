@@ -25,12 +25,12 @@
                         <Font name="System Bold" size="22.0" />
                     </font>
                     <HBox.margin>
-                        <Insets top="10.0" />
+                        <Insets left="-15.0" top="10.0" />
                     </HBox.margin>
                 </Text>
                 <Button mnemonicParsing="false" style="-fx-background-color: #ec221f; -fx-background-radius: 10;" text="Annuler" textFill="WHITE">
                     <HBox.margin>
-                        <Insets left="30.0" top="5.0" />
+                        <Insets left="45.0" top="5.0" />
                     </HBox.margin>
                 </Button>
             </children>
