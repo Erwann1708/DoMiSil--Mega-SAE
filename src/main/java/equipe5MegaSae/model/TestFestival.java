@@ -1,21 +1,50 @@
 package equipe5MegaSae.model;
 
+import java.io.File;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 public class TestFestival {
 
     public static void main(String[] args) {
 
+        //Création d’un lieu
+        Lieu lieu = new Lieu("Parc des Expos", "Lyon", "69000", "10 rue de la scène", 5000);
+
+        //Creation d'une logistique
+        Logistique log = new Logistique(0, 0, "SecuCo", "FournCo", "En attente");
+
+        //Ajout de matériel à la logistique
+        Materiel materielScene = new Materiel(TypeMateriel.SCENE, 5);
+        log.modifierQuantiteMateriel(TypeMateriel.SCENE, 5);
+        System.out.println("\nAprès ajout de SCÈNE (qte=5) :");
+        log.getMateriels().forEach(m ->
+                System.out.println("  " + m)
+        );
+
+        //Modification de quantité
+        System.out.println("\nModification de la quantité de SCÈNE à 10 :");
+        materielScene.setQuantite(10);
+        System.out.println(materielScene + "\n");
+
+        // Suppression du matériel
+        System.out.println("\nSuppression de SCÈNE :");
+        log.supprimerMateriel(new Materiel(TypeMateriel.SCENE, 0));
+        for (Materiel m : log.getMateriels()) {
+            System.out.println("  " + m);
+        }
+
         // Création d'un festival
-        Festival festival = new Festival("Festival de Musique", 50000, LocalDate.of(2023, 6, 1), LocalDate.of(2023, 6, 3));
+        Festival festival = new Festival("Festival de Musique", 50000, LocalDate.of(2023, 6, 1), LocalDate.of(2023, 6, 3), lieu);
 
         // Affichage des détails du festival
         System.out.println("Nom du festival: " + festival.getNom());
         System.out.println("Budget: " + festival.getBudget());
         System.out.println("Date de début: " + festival.getDateDebut());
         System.out.println("Date de fin: " + festival.getDateFin());
+        System.out.println("Lieu: " + festival.getLieu());
 
         //Creations des artistes
         Artiste a1 = new Artiste("Zola", "zola@gmail.com", "0601020304");
@@ -112,9 +141,49 @@ public class TestFestival {
             }
 
             System.out.println("- " + nom);
-            System.out.println("  • Type       : " + type);
-            System.out.println("  • Horaire    : " + debut + " → " + fin);
+            System.out.println("  - Type       : " + type);
+            System.out.println("  - Horaire    : " + debut + " -> " + fin);
 
         }
+
+        // === Tests Billets & StatistiqueVente ===
+        System.out.println("\n=== Tests Billets & StatistiqueVente ===");
+
+// Création et ajout de deux billets
+        Billet billet1 = new Billet(20.0, new Date(), festival);
+        festival.ajouterBillet(billet1);
+
+        Billet billet2 = new Billet(35.0, new Date(), festival);
+        festival.ajouterBillet(billet2);
+
+// Affichage de tous les billets vendus
+        System.out.println("Billets vendus :");
+        for (Billet b : festival.getBillets()) {
+            System.out.println("  " + b);
+        }
+
+// Récupération et affichage des statistiques
+        StatistiqueVente stats = festival.getStatistiqueVente();
+        System.out.println("Nombre de billets vendus : " + stats.getNbBilletsVendus());
+        System.out.println("Revenu total : "            + stats.getRevenuTotal());
+
+// Test de suppression et mise à jour des stats
+        System.out.println("\nSuppression du 1er billet et recalcul :");
+        festival.supprimerBillet(billet1);
+
+        System.out.println("Billets restants :");
+        for (Billet b : festival.getBillets()) {
+            System.out.println("  " + b);
+        }
+
+        stats = festival.getStatistiqueVente();
+        System.out.println("Nombre de billets vendus : " + stats.getNbBilletsVendus());
+        System.out.println("Revenu total : "            + stats.getRevenuTotal());
+
+
+
+
     }
+
+
 }

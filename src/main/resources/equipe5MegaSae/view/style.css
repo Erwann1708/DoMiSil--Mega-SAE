@@ -1,0 +1,40 @@
+/* Style général */
+.titled-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-width: 0 0 10 0; /* crée un "espace" dessous */
+}
+
+/* Titre fermé */
+.titled-pane > .title {
+    -fx-background-color: #ffffff;
+    -fx-border-color: transparent;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-text-fill: #333;
+    -fx-font-size: 14px;
+}
+
+/* Titre ouvert */
+.titled-pane:expanded > .title {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+}
+
+/* Contenu visible */
+.titled-pane > *.content {
+    -fx-background-color: #d9d9d9;
+    -fx-border-radius: 0 0 10 10;
+}
+
+/* Accordion global */
+.accordion {
+    -fx-background-color: transparent;
+}
+
+.split-pane > .split-pane-divider {
+    -fx-padding: 0;
+    -fx-background-color: transparent;
+}
