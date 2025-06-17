@@ -28,7 +28,7 @@
             </Button>
          </children>
       </HBox>
-      <VBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="382.0" prefWidth="350.0" spacing="10">
+      <VBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="44.0" prefHeight="348.0" prefWidth="350.0" spacing="10">
          <children>
             <Label text="Nom du festival" />
             <TextField fx:id="nomFestival" maxWidth="350" promptText="Nom du festival" />
