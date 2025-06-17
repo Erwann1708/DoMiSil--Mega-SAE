@@ -21,6 +21,7 @@ public class acceuilController {
     @FXML private TitledPane billetteriePane;
     @FXML private TitledPane documentsPane;
     @FXML private Button CreerFestivalButton;
+    @FXML private Button ajouterArtisteButton;
 
     private void setSectionsEnabled(boolean enabled) {
         artistePane.setDisable(!enabled);
@@ -55,6 +56,20 @@ public class acceuilController {
         }
     }
 
+    @FXML
+    private void handleAjouterArtiste(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/equipe5MegaSae/view/CreerArtiste.fxml"));
+            Parent root = loader.load();
 
-
+            // Crée la nouvelle fenêtre
+            Stage stage = new Stage();
+            stage.setTitle("Créer Artiste");
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL); // bloque la fenêtre principale
+            stage.showAndWait(); // attend que l'utilisateur ferme
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
