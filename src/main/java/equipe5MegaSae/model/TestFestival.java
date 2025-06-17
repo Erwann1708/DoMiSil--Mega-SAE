@@ -13,6 +13,29 @@ public class TestFestival {
         //Création d’un lieu
         Lieu lieu = new Lieu("Parc des Expos", "Lyon", "69000", "10 rue de la scène", 5000);
 
+        //Creation d'une logistique
+        Logistique log = new Logistique(0, 0, "SecuCo", "FournCo", "En attente");
+
+        //Ajout de matériel à la logistique
+        Materiel materielScene = new Materiel(TypeMateriel.SCENE, 5);
+        log.modifierQuantiteMateriel(TypeMateriel.SCENE, 5);
+        System.out.println("\nAprès ajout de SCÈNE (qte=5) :");
+        log.getMateriels().forEach(m ->
+                System.out.println("  " + m)
+        );
+
+        //Modification de quantité
+        System.out.println("\nModification de la quantité de SCÈNE à 10 :");
+        materielScene.setQuantite(10);
+        System.out.println(materielScene + "\n");
+
+        // Suppression du matériel
+        System.out.println("\nSuppression de SCÈNE :");
+        log.supprimerMateriel(new Materiel(TypeMateriel.SCENE, 0));
+        for (Materiel m : log.getMateriels()) {
+            System.out.println("  " + m);
+        }
+
         // Création d'un festival
         Festival festival = new Festival("Festival de Musique", 50000, LocalDate.of(2023, 6, 1), LocalDate.of(2023, 6, 3), lieu);
 
@@ -118,8 +141,8 @@ public class TestFestival {
             }
 
             System.out.println("- " + nom);
-            System.out.println("  • Type       : " + type);
-            System.out.println("  • Horaire    : " + debut + " → " + fin);
+            System.out.println("  - Type       : " + type);
+            System.out.println("  - Horaire    : " + debut + " -> " + fin);
 
         }
 
