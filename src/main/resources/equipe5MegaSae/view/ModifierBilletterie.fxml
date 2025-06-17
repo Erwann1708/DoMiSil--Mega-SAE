@@ -4,14 +4,14 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane prefHeight="221.0" prefWidth="253.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equipe5MegaSae.view.ModifierBilletterie">
-    <VBox alignment="TOP_LEFT" layoutX="11.0" prefHeight="220.0" prefWidth="231.0" spacing="10">
-        <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Création de la Billetterie" />
+    <VBox alignment="TOP_LEFT" layoutX="12.0" prefHeight="220.0" prefWidth="226.0" spacing="10">
+        <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Modifier Billetterie" />
         <Label text="Nombre de place" />
         <TextField promptText="Nombre de place" text="" />
         <Label text="Prix des billets" />
         <TextField promptText="Prix des billets" text="" />
         <HBox alignment="CENTER" spacing="10">
-            <Button style="-fx-background-color: #6A0DAD; -fx-text-fill: white;" text="Ajouter" />
+            <Button style="-fx-background-color: #6A0DAD; -fx-text-fill: white;" text="Modifier" />
             <Button style="-fx-background-color: #FF0000; -fx-text-fill: white;" text="Quitter" />
         </HBox>
     </VBox>
