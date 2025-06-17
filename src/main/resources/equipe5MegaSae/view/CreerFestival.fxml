@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="400.0" prefWidth="374.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equipe5MegaSae.view.CreerFestival">
+<AnchorPane prefHeight="400.0" prefWidth="374.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equipe5MegaSae.controller.CreerFestivalController">
    <children>
       <Label layoutX="10.0" layoutY="5.0" style="-fx-font-size: 12px; -fx-font-weight: bold;" text="Créer votre festival" />
       <VBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="382.0" prefWidth="350.0" spacing="10">
          <children>
             <Label text="Nom du festival" />
-            <TextField maxWidth="350" promptText="Nom du festival" />
+            <TextField fx:id="nomFestival" maxWidth="350" promptText="Nom du festival" />
             <Label text="Budget" />
             <HBox alignment="CENTER_LEFT" spacing="5">
-               <TextField maxWidth="300" promptText="Budget" />
+               <TextField fx:id="BudgetFestival" maxWidth="300" onAction="#l" promptText="Budget" />
                <Label text="€" />
             </HBox>
             <Label text="Date de Début" />
@@ -30,7 +34,7 @@
             <Button maxWidth="250" style="-fx-background-color: purple; -fx-text-fill: white;" text="Choisir le lieu" />
             <HBox alignment="CENTER_LEFT" spacing="15">
                <Button maxWidth="300" prefWidth="300" style="-fx-background-color: black; -fx-text-fill: white;" text="Créer le Festival" />
-               <Button maxWidth="100" prefWidth="100" style="-fx-background-color: red; -fx-text-fill: white;" text="Quitter" />
+               <Button fx:id="Quitter" maxWidth="100" onAction="#handleQuitter" prefWidth="100" style="-fx-background-color: red; -fx-text-fill: white;" text="Quitter" />
             </HBox>
          </children>
       </VBox>

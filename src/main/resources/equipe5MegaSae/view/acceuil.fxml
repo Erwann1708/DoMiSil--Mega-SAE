@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="728.0" prefWidth="1404.0" spacing="20.0" style="-fx-background-color: #D9D9D9;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equipe5MegaSae.controller.HelloController">
+<VBox prefHeight="728.0" prefWidth="1404.0" spacing="20.0" style="-fx-background-color: #D9D9D9;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equipe5MegaSae.controller.acceuilController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -102,7 +102,7 @@
                                           <Insets />
                                        </opaqueInsets>
                                     </TextField>
-                                    <Button mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="➕ Créer" textFill="WHITE" AnchorPane.leftAnchor="343.0" AnchorPane.topAnchor="29.0" />
+                                    <Button fx:id="CreerFestivalButton" mnemonicParsing="false" onAction="#handleCreerFestival" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="➕ Créer" textFill="WHITE" AnchorPane.leftAnchor="343.0" AnchorPane.topAnchor="29.0" />
                                     <Button mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="Modifier" textFill="WHITE" AnchorPane.leftAnchor="343.0" AnchorPane.topAnchor="73.0" />
                                  </children>
                                  <padding>
@@ -111,7 +111,7 @@
                               </AnchorPane>
                         </content>
                       </TitledPane>
-                      <TitledPane animated="false" expanded="false" style="-fx-animated: true;" text="Artiste                                Ajoutez vos Artistes">
+                      <TitledPane fx:id="artistePane" animated="false" expanded="false" style="-fx-animated: true;" text="Artiste                                Ajoutez vos Artistes">
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #D9D9D9;">
                                  <children>
@@ -138,7 +138,7 @@
                               </AnchorPane>
                         </content>
                       </TitledPane>
-                      <TitledPane animated="false" expanded="false" style="-fx-animated: true;" text="Logistique                          Gérer tout l'aspect logistique de votre festival">
+                      <TitledPane fx:id="logistiquePane" animated="false" expanded="false" style="-fx-animated: true;" text="Logistique                          Gérer tout l'aspect logistique de votre festival">
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #D9D9D9;">
                                  <children>
@@ -172,7 +172,7 @@
                                  </children></AnchorPane>
                         </content>
                       </TitledPane>
-                        <TitledPane animated="false" expanded="false" style="-fx-animated: true;" text="Planning                             Assignez des créneaux a vos artistes ">
+                        <TitledPane fx:id="planningPane" animated="false" expanded="false" style="-fx-animated: true;" text="Planning                             Assignez des créneaux a vos artistes ">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #D9D9D9;">
                                  <children>
@@ -192,7 +192,7 @@
                                  </children></AnchorPane>
                            </content>
                         </TitledPane>
-                        <TitledPane animated="false" expanded="false" style="-fx-animated: true;" text="Billeterie                             Gérer et suivez vos Ventes">
+                        <TitledPane fx:id="billetteriePane" animated="false" expanded="false" style="-fx-animated: true;" text="Billeterie                             Gérer et suivez vos Ventes">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #D9D9D9;">
                                  <children>
@@ -226,7 +226,7 @@
                                  </children></AnchorPane>
                            </content>
                         </TitledPane>
-                        <TitledPane animated="false" expanded="false" style="-fx-animated: true;" text="Documents                         Retrouvez tout vos Documents ici">
+                        <TitledPane fx:id="documentsPane" animated="false" expanded="false" style="-fx-animated: true;" text="Documents                         Retrouvez tout vos Documents ici">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #D9D9D9;">
                                  <children>

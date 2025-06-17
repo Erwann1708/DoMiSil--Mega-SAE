@@ -5,6 +5,7 @@ module equipe5MegaSae {
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
     requires org.kordamp.bootstrapfx.core;
+    requires java.desktop;
 
     opens equipe5MegaSae.controller to javafx.fxml;
 
