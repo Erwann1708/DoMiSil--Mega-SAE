@@ -16,7 +16,7 @@
             <TextField fx:id="nomFestival" maxWidth="350" promptText="Nom du festival" />
             <Label text="Budget" />
             <HBox alignment="CENTER_LEFT" spacing="5">
-               <TextField fx:id="BudgetFestival" maxWidth="300" onAction="#l" promptText="Budget" />
+               <TextField fx:id="BudgetFestival" maxWidth="300" promptText="Budget" />
                <Label text="€" />
             </HBox>
             <Label text="Date de Début" />

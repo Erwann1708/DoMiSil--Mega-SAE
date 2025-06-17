@@ -40,4 +40,6 @@ public class CreerArtisteController {
         // Handle the annuler button action
         // Add logic to handle canceling the action
     }
+
+
 }

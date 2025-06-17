@@ -22,7 +22,7 @@ public class acceuilController {
     @FXML private TitledPane documentsPane;
     @FXML private Button CreerFestivalButton;
     @FXML private Button ajouterArtisteButton;
-
+/*
     private void setSectionsEnabled(boolean enabled) {
         artistePane.setDisable(!enabled);
         logistiquePane.setDisable(!enabled);
@@ -35,6 +35,8 @@ public class acceuilController {
         // Désactiver tous les TitledPane au départ
         setSectionsEnabled(false);
     }
+        */
+
 
     @FXML
     private void handleCreerFestival(ActionEvent event) {

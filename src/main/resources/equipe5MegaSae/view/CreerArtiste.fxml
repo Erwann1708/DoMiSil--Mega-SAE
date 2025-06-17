@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="299.0" prefWidth="244.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equipe5MegaSae.view.CreerArtiste">
+<AnchorPane prefHeight="299.0" prefWidth="244.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equipe5MegaSae.controller.CreerArtisteController">
     <Label layoutX="10" layoutY="10" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Création de l’Artiste" />
     <VBox alignment="CENTER_LEFT" layoutX="50" layoutY="50" spacing="10">
         <Label text="Nom de l’artiste" />
