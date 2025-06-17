@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="728.0" prefWidth="1404.0" spacing="20.0" style="-fx-background-color: #D9D9D9;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equipe5MegaSae.controller.HelloController">
+<VBox prefHeight="728.0" prefWidth="1404.0" spacing="20.0" style="-fx-background-color: #D9D9D9;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equipe5MegaSae.controller.HelloController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -21,7 +21,7 @@
          <children>
             <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-stroke: black; -fx-stroke-width: 0;" text="Do">
                <font>
-                  <Font name="System Bold" size="32.0" />
+                  <Font name="Segoe UI Black" size="32.0" />
                </font>
                <HBox.margin>
                   <Insets />
@@ -29,20 +29,20 @@
             </Text>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-stroke: white; -fx-stroke-width: 0;" text="MI">
                <font>
-                  <Font name="System Bold" size="32.0" />
+                  <Font name="Segoe UI Black" size="32.0" />
                </font>
             </Text>
             <Text fill="WHITE" layoutX="10.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-stroke: black; -fx-stroke-width: 0;" text="Si">
                <font>
-                  <Font name="System Bold" size="32.0" />
+                  <Font name="Segoe UI Black" size="32.0" />
                </font>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-stroke: white; -fx-stroke-width: 0;" text="'l">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-stroke: white; -fx-stroke-width: 0;" text="'l ♪">
                <font>
-                  <Font name="System Bold" size="32.0" />
+                  <Font name="Segoe UI Black" size="32.0" />
                </font>
                <HBox.margin>
-                  <Insets right="100.0" />
+                  <Insets right="65.0" />
                </HBox.margin>
             </Text>
             <HBox alignment="TOP_CENTER" prefHeight="90.0" prefWidth="480.0" spacing="40.0">
@@ -80,13 +80,13 @@
         <items>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Accordion centerShape="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="566.0" style="-fx-background-color: #D9D9D9;">
+                  <Accordion fx:id="accordion" centerShape="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="566.0" style="-fx-background-color: #D9D9D9;">
                     <panes>
-                      <TitledPane alignment="TOP_LEFT" animated="false" contentDisplay="CENTER" maxHeight="-Infinity" minHeight="-Infinity" style="-fx-animated: true; -fx-background-color: #D9D9D9;" text="Mon Festival                      Creer votre festival comme vous le voulez" textOverrun="CLIP">
+                      <TitledPane alignment="TOP_LEFT" animated="false" contentDisplay="CENTER" expanded="true" maxHeight="-Infinity" minHeight="-Infinity" style="-fx-animated: true; -fx-background-color: #D9D9D9;" text="Mon Festival                      Creer votre festival comme vous le voulez" textOverrun="CLIP">
                         <content>
                           <AnchorPane maxHeight="-Infinity" minHeight="200.0" minWidth="0.0" prefHeight="254.0" prefWidth="545.0" style="-fx-background-color: #D9D9D9;">
                                  <children>
-                                    <TextField editable="false" layoutX="20.0" layoutY="20.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="414.0" style="-fx-background-radius: 8;" text="   Créer un Festival" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                    <TextField editable="false" layoutX="20.0" layoutY="20.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="414.0" style="-fx-background-radius: 8;" text="   Créer un Festival" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="22.0">
                                        <padding>
                                           <Insets bottom="2.0" right="284.0" />
                                        </padding>
@@ -94,7 +94,7 @@
                                           <Font name="Tahoma" size="12.0" />
                                        </font>
                                     </TextField>
-                                    <TextField editable="false" layoutX="20.0" layoutY="52.0" prefHeight="40.0" prefWidth="415.0" style="-fx-background-radius: 8;" text="   MonFestivalExemple" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="55.0">
+                                    <TextField editable="false" layoutX="20.0" layoutY="52.0" prefHeight="40.0" prefWidth="415.0" style="-fx-background-radius: 8;" text="   MonFestivalExemple" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="67.0">
                                        <padding>
                                           <Insets bottom="2.0" right="280.0" />
                                        </padding>
@@ -102,8 +102,8 @@
                                           <Insets />
                                        </opaqueInsets>
                                     </TextField>
-                                    <Button mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="Créer" textFill="WHITE" AnchorPane.leftAnchor="343.0" AnchorPane.topAnchor="17.0" />
-                                    <Button mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="Modifier" textFill="WHITE" AnchorPane.leftAnchor="343.0" AnchorPane.topAnchor="61.0" />
+                                    <Button mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="➕ Créer" textFill="WHITE" AnchorPane.leftAnchor="343.0" AnchorPane.topAnchor="29.0" />
+                                    <Button mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="Modifier" textFill="WHITE" AnchorPane.leftAnchor="343.0" AnchorPane.topAnchor="73.0" />
                                  </children>
                                  <padding>
                                     <Insets bottom="400.0" />
@@ -131,9 +131,9 @@
                                           <Insets />
                                        </opaqueInsets>
                                     </TextField>
-                                    <Button mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="+ Ajouter" textFill="WHITE" AnchorPane.leftAnchor="343.0" AnchorPane.topAnchor="12.0" />
-                                    <Button layoutX="360.0" layoutY="32.0" mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="Fiche" textFill="WHITE" AnchorPane.leftAnchor="290.0" AnchorPane.topAnchor="55.0" />
-                                    <Button layoutX="360.0" layoutY="32.0" mnemonicParsing="false" style="-fx-background-color: #ec221f; -fx-background-radius: 10;" text="Supprimer" textFill="WHITE" AnchorPane.leftAnchor="340.0" AnchorPane.topAnchor="55.0" />
+                                    <Button mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="➕ Ajouter" textFill="WHITE" AnchorPane.leftAnchor="343.0" AnchorPane.topAnchor="12.0" />
+                                    <Button layoutX="360.0" layoutY="32.0" mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="Fiche" textFill="WHITE" AnchorPane.leftAnchor="285.0" AnchorPane.topAnchor="55.0" />
+                                    <Button layoutX="360.0" layoutY="32.0" mnemonicParsing="false" style="-fx-background-color: #ec221f; -fx-background-radius: 10;" text="🗑 Supprimer" textFill="WHITE" AnchorPane.leftAnchor="335.0" AnchorPane.topAnchor="55.0" />
                                  </children>
                               </AnchorPane>
                         </content>
@@ -150,7 +150,7 @@
                                           <Font name="Tahoma" size="12.0" />
                                        </font>
                                     </TextField>
-                                    <Button mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="+ Ouvrir" textFill="WHITE" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="10.0" />
+                                    <Button mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="➕ Ouvrir" textFill="WHITE" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="10.0" />
                                     <TextField editable="false" layoutX="40.0" layoutY="34.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="414.0" style="-fx-background-radius: 8;" text=" Transport" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="50.0">
                                        <padding>
                                           <Insets bottom="2.0" right="284.0" />
@@ -167,8 +167,8 @@
                                           <Font name="Tahoma" size="12.0" />
                                        </font>
                                     </TextField>
-                                    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="+ Ouvrir" textFill="WHITE" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="55.0" />
-                                    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="+ Ouvrir" textFill="WHITE" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="105.0" />
+                                    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="➕ Ouvrir" textFill="WHITE" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="55.0" />
+                                    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="➕ Ouvrir" textFill="WHITE" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="105.0" />
                                  </children></AnchorPane>
                         </content>
                       </TitledPane>
@@ -176,7 +176,10 @@
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #D9D9D9;">
                                  <children>
-                                    <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="190.0" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="+ Ouvrir votre Planning" textFill="WHITE" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="2.0" />
+                                    <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="190.0" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="✯ Ouvrir votre Planning" textFill="WHITE" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="2.0">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font></Button>
                                     <TextField editable="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="414.0" style="-fx-background-radius: 8;" text="   Ajoutez un Artiste" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="40.0">
                                        <padding>
                                           <Insets bottom="2.0" right="284.0" />
@@ -185,7 +188,7 @@
                                           <Font name="Tahoma" size="12.0" />
                                        </font>
                                     </TextField>
-                                    <Button mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="+ Ajouter" textFill="WHITE" AnchorPane.leftAnchor="340.0" AnchorPane.topAnchor="46.0" />
+                                    <Button mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="➕ Ajouter" textFill="WHITE" AnchorPane.leftAnchor="340.0" AnchorPane.topAnchor="46.0" />
                                  </children></AnchorPane>
                            </content>
                         </TitledPane>
@@ -210,7 +213,7 @@
                                           <Font name="Tahoma" size="12.0" />
                                        </font>
                                     </TextField>
-                                    <Button mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="+ Ajouter" textFill="WHITE" AnchorPane.leftAnchor="340.0" AnchorPane.topAnchor="55.0" />
+                                    <Button mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="Modifier" textFill="WHITE" AnchorPane.leftAnchor="344.0" AnchorPane.topAnchor="55.0" />
                                     <TextField editable="false" layoutX="24.0" layoutY="70.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="414.0" style="-fx-background-radius: 8;" text=" Créer nouvelle billeterie" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="100.0">
                                        <padding>
                                           <Insets bottom="2.0" right="284.0" />
@@ -219,7 +222,7 @@
                                           <Font name="Tahoma" size="12.0" />
                                        </font>
                                     </TextField>
-                                    <Button layoutX="364.0" layoutY="75.0" mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="* Ouvrir" textFill="WHITE" AnchorPane.leftAnchor="350.0" AnchorPane.topAnchor="105.0" />
+                                    <Button layoutX="364.0" layoutY="75.0" mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="✯ Ouvrir" textFill="WHITE" AnchorPane.leftAnchor="345.0" AnchorPane.topAnchor="106.0" />
                                  </children></AnchorPane>
                            </content>
                         </TitledPane>
@@ -227,7 +230,7 @@
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #D9D9D9;">
                                  <children>
-                                    <TextField editable="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="414.0" style="-fx-background-radius: 8;" text="   Ajoutez vos Devis" AnchorPane.topAnchor="5.0">
+                                    <TextField editable="false" layoutX="20.0" layoutY="70.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="414.0" style="-fx-background-radius: 8;" text="   Ajouter vos Devis" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="0.0">
                                        <padding>
                                           <Insets bottom="2.0" right="284.0" />
                                        </padding>
@@ -235,7 +238,8 @@
                                           <Font name="Tahoma" size="12.0" />
                                        </font>
                                     </TextField>
-                                    <TextField editable="false" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="414.0" style="-fx-background-radius: 8;" text="   Devis Artistes" AnchorPane.topAnchor="50.0">
+                                    <Button mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="➕ Ajouter" textFill="WHITE" AnchorPane.leftAnchor="330.0" AnchorPane.topAnchor="5.0" />
+                                    <TextField editable="false" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="414.0" style="-fx-background-radius: 8;" text="   Devis Artistes" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="45.0">
                                        <padding>
                                           <Insets bottom="2.0" right="284.0" />
                                        </padding>
@@ -243,7 +247,7 @@
                                           <Font name="Tahoma" size="12.0" />
                                        </font>
                                     </TextField>
-                                    <TextField editable="false" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="414.0" style="-fx-background-radius: 8;" text="   Devis Musiciens" AnchorPane.topAnchor="100.0">
+                                    <TextField editable="false" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="414.0" style="-fx-background-radius: 8;" text="   Devis Musiciens" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="95.0">
                                        <padding>
                                           <Insets bottom="2.0" right="284.0" />
                                        </padding>
@@ -251,7 +255,7 @@
                                           <Font name="Tahoma" size="12.0" />
                                        </font>
                                     </TextField>
-                                    <TextField editable="false" layoutX="20.0" layoutY="20.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="414.0" style="-fx-background-radius: 8;" text="   Devis Sécurité" AnchorPane.topAnchor="150.0">
+                                    <TextField editable="false" layoutX="20.0" layoutY="20.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="414.0" style="-fx-background-radius: 8;" text="   Devis Sécurité" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="140.0">
                                        <padding>
                                           <Insets bottom="2.0" right="284.0" />
                                        </padding>
@@ -259,6 +263,9 @@
                                           <Font name="Tahoma" size="12.0" />
                                        </font>
                                     </TextField>
+                                    <Button layoutX="350.0" layoutY="30.0" mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="🔎 Ouvrir" textFill="WHITE" AnchorPane.leftAnchor="330.0" AnchorPane.topAnchor="50.0" />
+                                    <Button layoutX="350.0" layoutY="30.0" mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="🔎 Ouvrir" textFill="WHITE" AnchorPane.leftAnchor="330.0" AnchorPane.topAnchor="100.0" />
+                                    <Button layoutX="350.0" layoutY="30.0" mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="🔎 Ouvrir" textFill="WHITE" AnchorPane.leftAnchor="330.0" AnchorPane.topAnchor="145.0" />
                                  </children></AnchorPane>
                            </content>
                         </TitledPane>
@@ -292,7 +299,7 @@
                               <Font size="13.0" />
                            </font>
                         </Text>
-                        <Button mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="Créer" textFill="WHITE">
+                        <Button mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="➕ Créer" textFill="WHITE">
                            <HBox.margin>
                               <Insets left="5.0" right="5.0" />
                            </HBox.margin>
