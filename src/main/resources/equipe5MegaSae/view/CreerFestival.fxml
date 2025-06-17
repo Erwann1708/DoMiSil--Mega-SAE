@@ -55,7 +55,7 @@
                      <Insets left="2.0" />
                   </HBox.margin></TextField>
             </HBox>
-            <Button maxWidth="351.0" prefHeight="26.0" prefWidth="351.0" style="-fx-background-color: purple; -fx-background-radius: 8;" text="Choisir le lieu" textFill="WHITE" />
+            <Button maxWidth="351.0" prefHeight="26.0" prefWidth="351.0" style="-fx-background-color: #6e3d96; -fx-background-radius: 8;" text="Choisir le lieu" textFill="WHITE" />
             <HBox alignment="CENTER_LEFT" spacing="15">
                <Button maxWidth="349.0" prefHeight="26.0" prefWidth="349.0" style="-fx-background-color: black; -fx-background-radius: 8;" text="Créer le Festival" textFill="WHITE" />
             </HBox>
