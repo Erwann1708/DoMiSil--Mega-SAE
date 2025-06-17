@@ -59,7 +59,7 @@
                   <Insets right="100.0" top="10.0" />
                </HBox.margin>
             </HBox>
-            <TextField editable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.75" prefHeight="38.0" prefWidth="275.0" style="-fx-background-radius: 10;" text="🔎                                                  +">
+            <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="275.0" promptText="🔎                                                  +" style="-fx-background-radius: 10;">
                <font>
                   <Font size="16.0" />
                </font>

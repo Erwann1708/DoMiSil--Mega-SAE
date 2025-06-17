@@ -1,42 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml" prefWidth="300" prefHeight="360" style="-fx-background-color: #000000;" >
+<AnchorPane prefHeight="310.0" prefWidth="300" style="-fx-background-color: #ffffff;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1">
 
-    <VBox alignment="TOP_CENTER" spacing="15" AnchorPane.topAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+    <VBox alignment="TOP_CENTER" spacing="15" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
         <HBox alignment="TOP_RIGHT">
-            <Label text="Créneau" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: black;" />
-            <Region fx:id="spacer" HBox.hgrow="ALWAYS"/>
-            <Button text="Annuler" style="-fx-background-color: #ec221f; -fx-text-fill: white;" />
+            <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: black;" text="Créneau" />
+            <Region fx:id="spacer" HBox.hgrow="ALWAYS" />
+            <Button style="-fx-background-color: #ec221f; -fx-background-radius: 10;" text="Quitter" textFill="WHITE" />
         </HBox>
 
-        <VBox spacing="10" alignment="CENTER_LEFT">
+        <VBox alignment="CENTER_LEFT" spacing="10">
             <Label text="Date" />
 
             <HBox spacing="10">
-                <TextField promptText="JJ" prefWidth="40" style="-fx-background-color: #D9D9D9;" />
-                <TextField promptText="MM" prefWidth="40" style="-fx-background-color: #D9D9D9;" />
-                <TextField promptText="AAAA" prefWidth="60" style="-fx-background-color: #D9D9D9;" />
+                <TextField prefWidth="40" promptText="JJ" style="-fx-background-color: #D9D9D9;" />
+                <TextField prefWidth="40" promptText="MM" style="-fx-background-color: #D9D9D9;" />
+                <TextField prefWidth="60" promptText="AAAA" style="-fx-background-color: #D9D9D9;" />
             </HBox>
 
             <Label text="Heure Début" />
             <HBox spacing="10">
-                <TextField promptText="HH" prefWidth="40" style="-fx-background-color: #D9D9D9;" />
-                <TextField promptText="MM" prefWidth="40" style="-fx-background-color: #D9D9D9;" />
+                <TextField prefWidth="40" promptText="HH" style="-fx-background-color: #D9D9D9;" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text=":">
+               <HBox.margin>
+                  <Insets top="3.0" />
+               </HBox.margin>
+            </Text>
+                <TextField prefWidth="40" promptText="MM" style="-fx-background-color: #D9D9D9;" />
             </HBox>
 
             <Label text="Heure Fin" />
             <HBox spacing="10">
-                <TextField promptText="HH" prefWidth="40" style="-fx-background-color: #D9D9D9;" />
-                <TextField promptText="MM" prefWidth="40" style="-fx-background-color: #D9D9D9;" />
+                <TextField prefWidth="40" promptText="HH" style="-fx-background-color: #D9D9D9;" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text=":">
+               <HBox.margin>
+                  <Insets top="3.0" />
+               </HBox.margin>
+            </Text>
+                <TextField prefWidth="40" promptText="MM" style="-fx-background-color: #D9D9D9;" />
             </HBox>
         </VBox>
 
-        <Button text="Sélectionner ce créneau" maxWidth="Infinity"
-                style="-fx-background-color: black; -fx-text-fill: white;" />
+        <Button maxWidth="Infinity" style="-fx-background-color: black; -fx-background-radius: 8;" text="Sélectionner ce créneau" textFill="WHITE">
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin></Button>
     </VBox>
 </AnchorPane>
