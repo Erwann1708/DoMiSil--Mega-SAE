@@ -1,9 +1,11 @@
 package equipe5MegaSae.model;
 
+import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+
 
 public class Festival {
 
@@ -32,8 +34,8 @@ public class Festival {
         this(); // Appel du constructeur par défaut pour initialiser les listes
         setNom(nom);
         setBudget(budget);
-        setDateDebut(dateDebut);
-        setDateFin(dateFin);
+        setDateDebut(dateDebut.getDayOfMonth(), dateDebut.getMonthValue(), dateDebut.getYear());
+        setDateFin(dateFin.getDayOfMonth(), dateFin.getMonthValue(), dateFin.getYear());
         setLieu(lieu);
     }
 
@@ -94,25 +96,34 @@ public class Festival {
         this.budget = budget;
     }
 
-    public void setDateDebut(LocalDate dateDebut) {
-        if (dateDebut == null) {
-            throw new IllegalArgumentException("La date de début ne peut pas être nulle.");
+    public void setDateDebut(int jour, int mois, int annee) {
+        if (!estDateValide(jour, mois, annee)) {
+            throw new IllegalArgumentException("La date de début est invalide.");
         }
+
+        LocalDate dateDebut = LocalDate.of(annee, mois, jour);
+
         if (this.dateFin != null && dateDebut.isAfter(this.dateFin)) {
-            throw new IllegalArgumentException("La date de début doit être avant ou égale à la date de fin.");
+            throw new IllegalArgumentException("La date de début doit être avant \n ou égale à la date de fin.");
         }
+
         this.dateDebut = dateDebut;
     }
 
-    public void setDateFin(LocalDate dateFin) {
-        if (dateFin == null) {
-            throw new IllegalArgumentException("La date de fin ne peut pas être nulle.");
+    public void setDateFin(int jour, int mois, int annee) {
+        if (!estDateValide(jour, mois, annee)) {
+            throw new IllegalArgumentException("La date de fin est invalide.");
         }
+
+        LocalDate dateFin = LocalDate.of(annee, mois, jour);
+
         if (this.dateDebut != null && dateFin.isBefore(this.dateDebut)) {
             throw new IllegalArgumentException("La date de fin doit être après ou égale à la date de début.");
         }
+
         this.dateFin = dateFin;
     }
+
 
     public void setLieu(Lieu lieu) {
         if (lieu == null) {
@@ -198,6 +209,16 @@ public class Festival {
         }
         // mets à jour la stat en enlevant ce billet
         statistiqueVente.retireBillet(billet);
+    }
+
+    public static boolean estDateValide(int jour, int mois, int annee) {
+        if (annee < 1900 || annee > 2100) return false;
+        try {
+            LocalDate.of(annee, mois, jour);
+            return true;
+        } catch (DateTimeException e) {
+            return false;
+        }
     }
 
 
