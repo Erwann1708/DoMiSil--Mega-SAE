@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="370.0" prefWidth="352.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equipe5MegaSae.view.ChoisirLieu">
+<AnchorPane prefHeight="370.0" prefWidth="352.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equipe5MegaSae.controller.ChoisirLieuController">
    <children>
       <HBox prefHeight="26.0" prefWidth="352.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="5.0">
          <children>
@@ -21,7 +21,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Button maxWidth="100" style="-fx-background-color: red; -fx-background-radius: 10;" text="Quitter" textFill="WHITE">
+            <Button fx:id="Quitter" maxWidth="100" onAction="#handleQuitter" style="-fx-background-color: red; -fx-background-radius: 10;" text="Quitter" textFill="WHITE">
                <HBox.margin>
                   <Insets left="170.0" />
                </HBox.margin>
@@ -31,29 +31,30 @@
       <VBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="40.0" prefHeight="330.0" prefWidth="342.0" spacing="15">
          <children>
             <Label text="Nom du Lieu" />
-            <TextField maxWidth="310" promptText="String Value" />
+            <TextField fx:id="test" />
+            <TextField fx:id="nomLieu" maxWidth="310" promptText="String Value" />
             <HBox spacing="10">
                <VBox>
                   <Label text="Ville" />
-                  <TextField promptText="String Value" />
+                  <TextField fx:id="villeLieu" promptText="String Value" />
                </VBox>
                <VBox>
                   <Label text="Code Postal" />
-                  <TextField promptText="Numeric Value" />
+                  <TextField fx:id="codePostalLieu" promptText="Numeric Value" />
                </VBox>
             </HBox>
             <Label text="Adresse" />
-            <TextField maxWidth="310" promptText="String Value" />
+            <TextField fx:id="adresseLieu" maxWidth="310" promptText="String Value" />
             <Label text="Superficie" />
             <HBox spacing="10">
-               <TextField promptText="String Value" />
+               <TextField fx:id="superficieLieu" promptText="String Value" />
                <Label text="m2">
                   <HBox.margin>
                      <Insets left="-5.0" top="3.0" />
                   </HBox.margin></Label>
             </HBox>
             <HBox alignment="CENTER_LEFT" spacing="10">
-               <Button prefHeight="26.0" prefWidth="310.0" style="-fx-background-color: black; -fx-background-radius: 8;" text="Choisir ce Lieu" textFill="WHITE" />
+               <Button onAction="#handleChoisirLieuButton" prefHeight="26.0" prefWidth="310.0" style="-fx-background-color: black; -fx-background-radius: 8;" text="Choisir ce Lieu" textFill="WHITE" />
             </HBox>
          </children>
       </VBox>

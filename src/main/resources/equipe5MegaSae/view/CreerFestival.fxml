@@ -55,7 +55,7 @@
                <TextField fx:id="moisFin" maxWidth="30" promptText="MM" />
                <TextField fx:id="anneeFin" maxWidth="50" promptText="AAAA" />
             </HBox>
-            <Button maxWidth="250" style="-fx-background-color: purple; -fx-text-fill: white;" text="Choisir le lieu" />
+            <Button fx:id="Lieu" maxWidth="250" onAction="#handleLieu" style="-fx-background-color: purple; -fx-text-fill: white;" text="Choisir le lieu" />
             <HBox alignment="CENTER_LEFT" spacing="15">
                <Button maxWidth="300" onAction="#handleCreerFestival" prefWidth="300" style="-fx-background-color: black; -fx-text-fill: white;" text="Créer le Festival" />
                <Button fx:id="Quitter" maxWidth="100" onAction="#handleQuitter" prefWidth="100" style="-fx-background-color: red; -fx-text-fill: white;" text="Quitter" />

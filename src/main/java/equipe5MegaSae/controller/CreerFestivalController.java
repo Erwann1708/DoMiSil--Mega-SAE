@@ -14,6 +14,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.w3c.dom.Text;
 
+import java.io.IOException;
 import java.time.DateTimeException;
 import java.time.LocalDate;
 
@@ -45,6 +46,8 @@ public class CreerFestivalController {
     private TextField anneeFin;
     @FXML
     private Label ErreurDate;
+    @FXML
+    private Button Lieu;
 
 
     @FXML
@@ -151,6 +154,26 @@ public class CreerFestivalController {
 
         } catch (Exception e) {
             e.printStackTrace(); // Pour debug s’il y a autre chose d’inattendu
+        }
+    }
+
+    @FXML
+    private void handleLieu(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/equipe5MegaSae/view/ChoisirLieu.fxml"));
+            Parent root = loader.load();
+
+            // Récupère le contrôleur de la nouvelle fenêtre
+            ChoisirLieuController controller = loader.getController();
+
+            // Crée la nouvelle fenêtre
+            Stage stage = new Stage();
+            stage.setTitle("Créer un Festival");
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL); // bloque la fenêtre principale
+            stage.showAndWait(); // attend que l'utilisateur ferme
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 

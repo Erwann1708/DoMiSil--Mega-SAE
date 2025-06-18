@@ -49,7 +49,7 @@ public class acceuilController {
 
             // Crée la nouvelle fenêtre
             Stage stage = new Stage();
-            stage.setTitle("Créer un Festival");
+            stage.setTitle("DoMiSi'l ManagerApp");
             stage.setScene(new Scene(root));
             stage.initModality(Modality.APPLICATION_MODAL); // bloque la fenêtre principale
             stage.showAndWait(); // attend que l'utilisateur ferme
