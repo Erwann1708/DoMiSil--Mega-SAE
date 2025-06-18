@@ -12,6 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
+<?import javafx.scene.control.ScrollPane?>
 <VBox prefHeight="728.0" prefWidth="1404.0" spacing="20.0" style="-fx-background-color: #D9D9D9;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="equipe5MegaSae.controller.acceuilController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
@@ -226,32 +227,21 @@
                                  </children></AnchorPane>
                            </content>
                         </TitledPane>
-                        <TitledPane fx:id="documentsPane" animated="false" expanded="false" style="-fx-animated: true;" text="Documents                         Retrouvez tout vos Documents ici">
-                           <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="186.0" prefWidth="545.0" style="-fx-background-color: #D9D9D9;">
-                                 <children>
-                                    <TextField editable="false" layoutX="20.0" layoutY="70.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="414.0" style="-fx-background-radius: 8;" text="   Ajouter vos Devis" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="0.0">
-                                       <padding>
-                                          <Insets bottom="2.0" right="284.0" />
-                                       </padding>
-                                       <font>
-                                          <Font name="Tahoma" size="12.0" />
-                                       </font>
-                                    </TextField>
-                                    <Button fx:id="ajouterDevis" mnemonicParsing="false" onAction="#handleAjouterDevis" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="➕ Ajouter" textFill="WHITE" AnchorPane.leftAnchor="330.0" AnchorPane.topAnchor="5.0" />
-                                    
-                                    <TextField editable="false" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="414.0" style="-fx-background-radius: 8;" text="   Devis Artistes" visible="false" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="45.0">
-                                       <padding>
-                                          <Insets bottom="2.0" right="284.0" />
-                                       </padding>
-                                       <font>
-                                          <Font name="Tahoma" size="12.0" />
-                                       </font>
-                                    </TextField>
-                                    <Button layoutX="350.0" layoutY="30.0" mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="🔎 Ouvrir" textFill="WHITE" visible="false" AnchorPane.leftAnchor="330.0" AnchorPane.topAnchor="50.0" />
-                                 </children></AnchorPane>
-                           </content>
-                        </TitledPane>
+                       <TitledPane fx:id="documentsPane" expanded="true"   text="Documents – Retrouvez tout vos Documents ici">
+                          <content>
+                             <ScrollPane fx:id="scrollPaneDocs"
+                                         fitToWidth="true"
+                                         prefHeight="200.0" prefWidth="545.0"
+                                         style="-fx-background-color: #D9D9D9;">
+                                <content>
+                                   <VBox fx:id="containerDocs"
+                                         spacing="10"
+                                         style="-fx-padding: 10;" >
+                                   </VBox>
+                                </content>
+                             </ScrollPane>
+                          </content>
+                       </TitledPane>
                     </panes>
                      <padding>
                         <Insets left="20.0" />

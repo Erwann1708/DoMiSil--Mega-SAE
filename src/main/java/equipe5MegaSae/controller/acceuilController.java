@@ -5,6 +5,7 @@ import equipe5MegaSae.model.Festival;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -17,6 +18,7 @@ import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+
 
 import java.io.IOException;
 
@@ -50,6 +52,15 @@ public class acceuilController {
                 java.time.LocalDate.of(2025, 7, 3),
                 new equipe5MegaSae.model.Lieu("Lieu Test", "Grenoble", "38000", "1 rue Test", 500)
         );
+        //On ouvre le TitledPane dès le départ
+        documentsPane.setExpanded(true);
+
+        //On contraint la largeur de la VBox à celle du ScrollPane moins un petit padding
+        containerDocs.prefWidthProperty()
+                .bind(scrollPaneDocs.widthProperty().subtract(20));
+
+        // On remplit tout de suite la liste (avec juste le bouton "Ajouter" si pas de docs)
+        refreshAffichageDocuments();
     }
 
 
@@ -136,25 +147,67 @@ public class acceuilController {
 
 
     public void refreshAffichageDocuments() {
+        // Vide le conteneur
         containerDocs.getChildren().clear();
 
+        // ─── Ligne "Ajouter vos Devis" ────────────────────────────────────────────
+        HBox addLine = new HBox(10);
+        addLine.setAlignment(Pos.CENTER_LEFT);
+        addLine.setStyle(
+                "-fx-background-color: #F4F4F4;" +
+                        "-fx-background-radius: 10;" +
+                        "-fx-padding: 10;"
+        );
+
+        Label addLabel = new Label("Ajouter vos Devis");
+        addLabel.setStyle("-fx-font-size: 14px; -fx-font-weight: bold;");
+
+        Region spacerAdd = new Region();
+        HBox.setHgrow(spacerAdd, Priority.ALWAYS);
+
+        Button addBtn = new Button("+");
+        addBtn.setStyle(
+                "-fx-background-color: #6e3d96;" +
+                        "-fx-text-fill: white;" +
+                        "-fx-background-radius: 15;"
+        );
+        addBtn.setOnAction(e -> handleAjouterDevis(null));
+
+        addLine.getChildren().addAll(addLabel, spacerAdd, addBtn);
+        containerDocs.getChildren().add(addLine);
+
+        // ─── Lignes Document existants ───────────────────────────────────────────
         for (Document doc : festival.getDocuments()) {
             HBox ligne = new HBox(10);
-            ligne.setStyle("-fx-background-color: #F4F4F4; -fx-padding: 10; -fx-alignment: CENTER_LEFT;");
+            ligne.setAlignment(Pos.CENTER_LEFT);
+            ligne.setStyle(
+                    "-fx-background-color: #F4F4F4;" +
+                            "-fx-background-radius: 10;" +
+                            "-fx-padding: 10;"
+            );
             ligne.setPrefHeight(50);
 
+            // Bloc texte : nom + type
             Label nomLabel = new Label(doc.getNom());
             nomLabel.setStyle("-fx-font-size: 14px; -fx-font-weight: bold;");
 
             Label typeLabel = new Label("(" + doc.getType() + ")");
             typeLabel.setStyle("-fx-font-size: 12px; -fx-text-fill: #555;");
 
-            Region spacer = new Region();
-            HBox.setHgrow(spacer, Priority.ALWAYS);
+            VBox blocTexte = new VBox(2, nomLabel, typeLabel);
 
+            // Espaceur flexible
+            Region spacerDoc = new Region();
+            HBox.setHgrow(spacerDoc, Priority.ALWAYS);
+
+            // Bouton Ouvrir (violet)
             Button ouvrirBtn = new Button("Ouvrir");
-            ouvrirBtn.setStyle("-fx-background-color: #6e3d96; -fx-text-fill: white; -fx-background-radius: 15px;");
-            ouvrirBtn.setOnAction(e -> {
+            ouvrirBtn.setStyle(
+                    "-fx-background-color: #6e3d96;" +
+                            "-fx-text-fill: white;" +
+                            "-fx-background-radius: 15;"
+            );
+            ouvrirBtn.setOnAction(ev -> {
                 try {
                     doc.ouvrir();
                 } catch (Exception ex) {
@@ -162,8 +215,23 @@ public class acceuilController {
                 }
             });
 
-            VBox blocTexte = new VBox(nomLabel, typeLabel);
-            ligne.getChildren().addAll(blocTexte, spacer, ouvrirBtn);
+            // Bouton Supprimer (texte rouge)
+            Button delBtn = new Button("Supprimer");
+            delBtn.setStyle(
+                    "-fx-background-color: transparent;" +
+                            "-fx-text-fill: #d64545;" +
+                            "-fx-font-weight: bold;" +
+                            "-fx-cursor: hand;"
+            );
+            delBtn.setOnAction(e -> {
+                festival.supprimerDocument(doc);
+                refreshAffichageDocuments();
+            });
+
+            // Ajout de tous les éléments à la ligne
+            ligne.getChildren().addAll(blocTexte, spacerDoc, ouvrirBtn, delBtn);
+
+            // Injection dans la VBox principale
             containerDocs.getChildren().add(ligne);
         }
     }
