@@ -17,6 +17,7 @@ import org.w3c.dom.Text;
 import java.io.IOException;
 import java.time.DateTimeException;
 import java.time.LocalDate;
+import equipe5MegaSae.model.Lieu;
 
 
 public class CreerFestivalController {
@@ -49,6 +50,15 @@ public class CreerFestivalController {
     @FXML
     private Button Lieu;
 
+    private Lieu lieuChoisi;
+
+    public void setLieuChoisi(Lieu lieu) {
+        this.lieuChoisi = lieu;
+    }
+
+    public Lieu getLieuChoisi() {
+        return lieuChoisi;
+    }
 
 
     @FXML
@@ -169,7 +179,7 @@ public class CreerFestivalController {
 
             // Crée la nouvelle fenêtre
             Stage stage = new Stage();
-            stage.setTitle("Créer un Festival");
+            stage.setTitle("DoMiSi'l ManagerApp");
             stage.setScene(new Scene(root));
             stage.initModality(Modality.APPLICATION_MODAL); // bloque la fenêtre principale
             stage.showAndWait(); // attend que l'utilisateur ferme
