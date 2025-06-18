@@ -1,5 +1,6 @@
 package equipe5MegaSae.controller;
 
+import equipe5MegaSae.model.Artiste;
 import equipe5MegaSae.model.Document;
 import equipe5MegaSae.model.Festival;
 import javafx.event.ActionEvent;
@@ -43,6 +44,9 @@ public class acceuilController {
 
     private Festival festival;
 
+    @FXML
+    private VBox artistesListVBox;
+
     public void initialize() {
         // Création d'un festival temporaire pour test
         this.festival = new Festival(
@@ -61,6 +65,7 @@ public class acceuilController {
 
         // On remplit tout de suite la liste (avec juste le bouton "Ajouter" si pas de docs)
         refreshAffichageDocuments();
+        refreshAffichageArtistes();
     }
 
 
@@ -106,6 +111,9 @@ public class acceuilController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/equipe5MegaSae/view/CreerArtiste.fxml"));
             Parent root = loader.load();
 
+            CreerArtisteController controller = loader.getController();
+            controller.setAccueilController(this);
+
             // Crée la nouvelle fenêtre
             Stage stage = new Stage();
             stage.setTitle("Créer Artiste");
@@ -115,6 +123,10 @@ public class acceuilController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+    public void ajouterArtiste(Artiste artiste) {
+        festival.ajouterArtiste(artiste);
+        refreshAffichageArtistes();
     }
 
     @FXML
@@ -236,8 +248,72 @@ public class acceuilController {
         }
     }
 
+    // Affiche la liste des artistes dans la VBox artistesListVBox
+    public void refreshAffichageArtistes() {
+        artistesListVBox.getChildren().clear();
 
+        // Ligne "Ajouter un artiste"
+        HBox addLine = new HBox(10);
+        addLine.setAlignment(Pos.CENTER_LEFT);
+        addLine.setStyle(
+                "-fx-background-color: #F4F4F4;" +
+                        "-fx-background-radius: 10;" +
+                        "-fx-padding: 10;"
+        );
 
+        Label addLabel = new Label("Ajouter un artiste");
+        addLabel.setStyle("-fx-font-size: 14px; -fx-font-weight: bold;");
 
+        Region spacerAdd = new Region();
+        HBox.setHgrow(spacerAdd, Priority.ALWAYS);
 
+        Button addBtn = new Button("+");
+        addBtn.setStyle(
+                "-fx-background-color: #6e3d96;" +
+                        "-fx-text-fill: white;" +
+                        "-fx-background-radius: 15;"
+        );
+        addBtn.setOnAction(e -> handleAjouterArtiste(null));
+
+        addLine.getChildren().addAll(addLabel, spacerAdd, addBtn);
+        artistesListVBox.getChildren().add(addLine);
+
+        // Lignes pour chaque artiste existant
+        for (Artiste artiste : festival.getArtistes()) {
+            HBox ligne = new HBox(10);
+            ligne.setAlignment(Pos.CENTER_LEFT);
+            ligne.setStyle(
+                    "-fx-background-color: #F4F4F4;" +
+                            "-fx-background-radius: 10;" +
+                            "-fx-padding: 10;"
+            );
+            ligne.setPrefHeight(50);
+
+            Label nomLabel = new Label(artiste.getNom());
+            nomLabel.setStyle("-fx-font-size: 14px; -fx-font-weight: bold;");
+
+            Label telLabel = new Label(artiste.getTelephone());
+            telLabel.setStyle("-fx-font-size: 12px; -fx-text-fill: #555;");
+
+            VBox blocTexte = new VBox(2, nomLabel, telLabel);
+
+            Region spacer = new Region();
+            HBox.setHgrow(spacer, Priority.ALWAYS);
+
+            Button delBtn = new Button("Supprimer");
+            delBtn.setStyle(
+                    "-fx-background-color: transparent;" +
+                            "-fx-text-fill: #d64545;" +
+                            "-fx-font-weight: bold;" +
+                            "-fx-cursor: hand;"
+            );
+            delBtn.setOnAction(e -> {
+                festival.supprimerArtiste(artiste);
+                refreshAffichageArtistes();
+            });
+
+            ligne.getChildren().addAll(blocTexte, spacer, delBtn);
+            artistesListVBox.getChildren().add(ligne);
+        }
+    }
 }

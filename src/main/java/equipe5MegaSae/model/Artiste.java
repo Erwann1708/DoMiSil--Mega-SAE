@@ -11,7 +11,7 @@ public class Artiste {
     private List<Evenement> evenements = new ArrayList<>();
 
 
-    public Artiste(String nom, String mail, String telephone) {
+    public Artiste(String nom, String telephone, String mail) {
         setNom(nom);
         setMail(mail);
         setTelephone(telephone);

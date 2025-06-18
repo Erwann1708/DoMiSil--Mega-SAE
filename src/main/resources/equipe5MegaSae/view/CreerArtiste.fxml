@@ -7,14 +7,15 @@
     <Label layoutX="10" layoutY="10" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Création de l’Artiste" />
     <VBox alignment="CENTER_LEFT" layoutX="50" layoutY="50" spacing="10">
         <Label text="Nom de l’artiste" />
-        <TextField promptText="Value" />
+        <TextField fx:id="nomArtisteField" promptText="Value" />
         <Label text="Telephone" />
-        <TextField promptText="Value" />
+        <TextField fx:id="telephoneField" promptText="Value" />
         <Label text="Email" />
-        <TextField promptText="Value" />
+        <TextField fx:id="emailField" promptText="Value" />
         <HBox alignment="CENTER" spacing="10">
-            <Button style="-fx-background-color: #6A0DAD; -fx-text-fill: white;" text="Ajouter" />
-            <Button style="-fx-background-color: #FF0000; -fx-text-fill: white;" text="Annuler" />
+            <Button fx:id="ajouterButton" onAction="#handleValider" style="-fx-background-color: #6A0DAD; -fx-text-fill: white;" text="Ajouter" />
+            <Button fx:id="annulerButton" onAction="#handleAnnuler" style="-fx-background-color: #FF0000; -fx-text-fill: white;" text="Annuler" />
         </HBox>
+        <Label fx:id="erreurLabel" text="" textFill="red"/>
     </VBox>
 </AnchorPane>

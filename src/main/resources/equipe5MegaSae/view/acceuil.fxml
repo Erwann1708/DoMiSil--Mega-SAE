@@ -112,34 +112,33 @@
                               </AnchorPane>
                         </content>
                       </TitledPane>
-                      <TitledPane fx:id="artistePane" animated="false" expanded="false" style="-fx-animated: true;" text="Artiste                                Ajoutez vos Artistes">
-                        <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #D9D9D9;">
-                                 <children>
-                                    <TextField editable="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="414.0" style="-fx-background-radius: 8;" text="   Créer un Artiste" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="5.0">
-                                       <padding>
-                                          <Insets bottom="2.0" right="284.0" />
-                                       </padding>
-                                       <font>
-                                          <Font name="Tahoma" size="12.0" />
-                                       </font>
-                                    </TextField>
-                                    <TextField editable="false" prefHeight="40.0" prefWidth="415.0" style="-fx-background-radius: 8;" text="   MonArtisteExemple" visible="false" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="50.0">
-                                       <padding>
-                                          <Insets bottom="2.0" right="280.0" />
-                                       </padding>
-                                       <opaqueInsets>
-                                          <Insets />
-                                       </opaqueInsets>
-                                    </TextField>
-                                    <Button fx:id="ajouterArtisteButton" mnemonicParsing="false" onAction="#handleAjouterArtiste" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="➕ Ajouter" textFill="WHITE" AnchorPane.leftAnchor="343.0" AnchorPane.topAnchor="12.0" />
-                                    <Button layoutX="360.0" layoutY="32.0" mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="Fiche" textFill="WHITE" visible="false" AnchorPane.leftAnchor="285.0" AnchorPane.topAnchor="55.0" />
-                                    <Button layoutX="360.0" layoutY="32.0" mnemonicParsing="false" style="-fx-background-color: #ec221f; -fx-background-radius: 10;" text="🗑 Supprimer" textFill="WHITE" visible="false" AnchorPane.leftAnchor="335.0" AnchorPane.topAnchor="55.0" />
-                                 </children>
-                              </AnchorPane>
-                        </content>
-                      </TitledPane>
-                      <TitledPane fx:id="logistiquePane" animated="false" expanded="false" style="-fx-animated: true;" text="Logistique                          Gérer tout l'aspect logistique de votre festival">
+                       <TitledPane fx:id="artistePane" expanded="true" text="Artiste – Retrouvez tous vos Artistes ici">
+                          <content>
+                             <VBox spacing="10" style="-fx-background-color: #D9D9D9; -fx-padding: 10;">
+                                <!-- Formulaire de création d'artiste -->
+                                <HBox spacing="10">
+                                   <TextField editable="false" prefHeight="40.0" prefWidth="300.0" style="-fx-background-radius: 8;" text="   Créer un Artiste">
+                                      <font>
+                                         <Font name="Tahoma" size="12.0" />
+                                      </font>
+                                   </TextField>
+                                   <Button fx:id="ajouterArtisteButton" mnemonicParsing="false" onAction="#handleAjouterArtiste"
+                                           style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="➕ Ajouter" textFill="WHITE" />
+                                </HBox>
+                                <!-- Liste dynamique des artistes dans un ScrollPane -->
+                                <ScrollPane fx:id="scrollPaneArtistes"
+                                            fitToWidth="true"
+                                            prefHeight="200.0" prefWidth="545.0"
+                                            style="-fx-background-color: #D9D9D9;">
+                                   <content>
+                                      <VBox fx:id="artistesListVBox"
+                                            spacing="10"
+                                            style="-fx-padding: 10;" />
+                                   </content>
+                                </ScrollPane>
+                             </VBox>
+                          </content>
+                       </TitledPane>                      <TitledPane fx:id="logistiquePane" animated="false" expanded="false" style="-fx-animated: true;" text="Logistique                          Gérer tout l'aspect logistique de votre festival">
                         <content>
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #D9D9D9;">
                                  <children>
