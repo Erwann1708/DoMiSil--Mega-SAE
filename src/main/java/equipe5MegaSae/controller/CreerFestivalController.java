@@ -47,6 +47,7 @@ public class CreerFestivalController {
     private Label ErreurDate;
 
 
+
     @FXML
     public void handleQuitter(ActionEvent event) {
         Stage stage = (Stage) Quitter.getScene().getWindow();
@@ -153,6 +154,8 @@ public class CreerFestivalController {
             e.printStackTrace(); // Pour debug s’il y a autre chose d’inattendu
         }
     }
+
+
 
 
 }

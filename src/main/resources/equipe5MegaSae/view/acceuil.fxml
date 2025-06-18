@@ -67,7 +67,7 @@
                   <Insets top="6.0" />
                </HBox.margin>
             </TextField>
-            <Button mnemonicParsing="false" style="-fx-background-color: #ec221f; -fx-background-radius: 8;" text="Quitter" textFill="WHITE">
+            <Button fx:id="quitterButton" mnemonicParsing="false" onAction="#handleQuitter" style="-fx-background-color: #ec221f; -fx-background-radius: 8;" text="Quitter" textFill="WHITE">
                <HBox.margin>
                   <Insets left="180.0" top="10.0" />
                </HBox.margin>
@@ -238,7 +238,8 @@
                                           <Font name="Tahoma" size="12.0" />
                                        </font>
                                     </TextField>
-                                    <Button mnemonicParsing="false" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="➕ Ajouter" textFill="WHITE" AnchorPane.leftAnchor="330.0" AnchorPane.topAnchor="5.0" />
+                                    <Button fx:id="ajouterDevis" mnemonicParsing="false" onAction="#handleAjouterDevis" style="-fx-background-color: #6e3d96; -fx-background-radius: 10;" text="➕ Ajouter" textFill="WHITE" AnchorPane.leftAnchor="330.0" AnchorPane.topAnchor="5.0" />
+                                    
                                     <TextField editable="false" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="414.0" style="-fx-background-radius: 8;" text="   Devis Artistes" visible="false" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="45.0">
                                        <padding>
                                           <Insets bottom="2.0" right="284.0" />
