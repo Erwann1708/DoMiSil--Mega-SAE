@@ -50,6 +50,7 @@ public class CreerFestivalController {
     private Button Lieu;
 
 
+
     @FXML
     public void handleQuitter(ActionEvent event) {
         Stage stage = (Stage) Quitter.getScene().getWindow();
@@ -176,6 +177,8 @@ public class CreerFestivalController {
             throw new RuntimeException(e);
         }
     }
+
+
 
 
 }

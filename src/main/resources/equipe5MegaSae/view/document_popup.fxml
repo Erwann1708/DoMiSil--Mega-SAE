@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="equipe5MegaSae.controller.DocumentPopupController"
+            prefWidth="400" prefHeight="250">
+
+    <VBox spacing="10" alignment="CENTER" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10"
+          AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
+        <Label text="Ajouter un Document" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+        <TextField fx:id="nomDocField" promptText="Nom du document"/>
+        <TextField fx:id="typeDocField" promptText="Type du document (PDF, etc.)"/>
+
+        <HBox spacing="10">
+            <Button text="Choisir un fichier" onAction="#handleChoisirFichier"/>
+            <Label fx:id="cheminFichierLabel" text="Aucun fichier sélectionné" maxWidth="200" wrapText="true"/>
+        </HBox>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Annuler" onAction="#handleAnnuler" />
+            <Button text="Valider" onAction="#handleValider" defaultButton="true"/>
+        </HBox>
+    </VBox>
+</AnchorPane>
+
