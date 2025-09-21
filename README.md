@@ -11,7 +11,7 @@ Application **JavaFX** développée en équipe de 4 étudiants pour faciliter l�
    ```bash
    git clone https://github.com/ton-utilisateur/DoMiSil-Mega-SAE.git
 
-   Puis ouvrir le projet dans IntelliJ IDEA.
+Puis ouvrir le projet dans IntelliJ IDEA.
 
 3. **Vérifier la configuration**
 
