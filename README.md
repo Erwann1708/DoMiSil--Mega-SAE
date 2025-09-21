@@ -8,11 +8,12 @@ Application **JavaFX** développée en équipe de 4 étudiants pour faciliter l�
 ## 🚀 Lancer l’application
 
 1. **Cloner le dépôt**
+   ```bash
    git clone https://github.com/ton-utilisateur/DoMiSil-Mega-SAE.git
 
    Puis ouvrir le projet dans IntelliJ IDEA.
 
-2. **Vérifier la configuration**
+3. **Vérifier la configuration**
 
 Java 17 (ou la version utilisée lors du projet) doit être installé.
 
